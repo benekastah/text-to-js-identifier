@@ -6,6 +6,8 @@ I found this code useful as I have been experimenting with building languages th
 
 ## Use
 
+### npm
+
 If you are using node.js, install with npm:
 
 ```
@@ -19,6 +21,8 @@ var to_js_identifier = require("text-to-js-identifier");
 to_js_identifier("hey!"); // -> "hey_$exclamationmark_"
 ```
 
+### ender
+
 If you are using [ender](http://ender.no.de/), then add it to your library:
 
 ```
@@ -30,6 +34,8 @@ and use it like this:
 ```
 $.to_js_identifier("bool?"); // -> "bool_$questionmark_"
 ```
+
+### other
 
 If you aren't using node or ender, then the function can be found in your global scope after you have downloaded and included your file:
 
