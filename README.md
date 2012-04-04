@@ -53,7 +53,7 @@ throw         -> _$throw_
 function      -> _$function_
 ```
 
-If your text contains an invalid character, it will in most cases be replaced by a javascript-compatable representation of that character:
+If your text contains an invalid character, it will in most cases be replaced by a human-readable and javascript-compatable representation of that character:
 
 ```
 -             -> _$dash_
@@ -64,8 +64,8 @@ If your text contains an invalid character, it will in most cases be replaced by
 If we don't have a handy human-readable representation on hand, we just display the ASCII character code:
 
 ```
-0hey          -> _$ASCII_48_hey
-†             -> _$ASCII_8224_¨
+0             -> _$ASCII_48_
+†             -> _$ASCII_8224_
 ƒ             -> _$ASCII_402_
 ```
 
@@ -76,3 +76,14 @@ _$hey_        -> _$_$hey__
 _$in_         -> _$_$in__
 _$ASCII_402_  -> _$_$ASCII_402__
 ```
+
+All text that is already valid will simply pass through unchanged:
+
+```
+hey           -> hey
+?wassup       -> _$questionmark_wassup
+etc.          -> etc_$period_
+hey,you       -> hey_$comma_you
+```
+
+As you can see, replacement values can go anywhere. Any ASCII-compatable string should generate a valid javascript identifier.
