@@ -95,7 +95,7 @@ char_wrapper = (char) ->
   txt = JS_ILLEGAL_IDENTIFIER_CHARS[char] ? "ASCII_#{char.charCodeAt 0}"
   wrapper txt
 
-to_js_symbol = (text) ->
+to_js_identifier = (text) ->
   if (JS_KEYWORDS.indexOf text) >= 0
     return wrapper text
   
@@ -109,11 +109,10 @@ to_js_symbol = (text) ->
 
 # If we are using node, export it with `module.exports`
 if module?.exports?
-  module.exports = to_js_symbol
-# If we are using ender (ender.no.de) (or some other system with a `provide` function that works similarly),
-# export with `provide`
-else if provide?
-  provide "to_js_symbol", to_js_symbol
+  module.exports = to_js_identifier
+# If we are using ender (ender.no.de), provide this method as a utility
+else if ender?
+  ender.ender to_js_identifier: to_js_identifier
 # Otherwise, attach it to the current context (will be `window` in the browser)
 else
-  @to_js_symbol = to_js_symbol
+  @to_js_identifier = to_js_identifier
