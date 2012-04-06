@@ -2,6 +2,7 @@ JS_KEYWORDS = [
   "break"
   "case"
   "catch"
+  "char"
   "class"
   "const"
   "continue"
