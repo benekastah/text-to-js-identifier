@@ -91,8 +91,8 @@ WRAPPER_REGEX = /_\$[^_]+_/g
 wrapper = (text) ->
   "#{WRAPPER_PREFIX}#{text}#{WRAPPER_SUFFIX}"
 
-char_wrapper = (char) ->
-  txt = JS_ILLEGAL_IDENTIFIER_CHARS[char] ? "ASCII_#{char.charCodeAt 0}"
+char_wrapper = (_char) ->
+  txt = JS_ILLEGAL_IDENTIFIER_CHARS[_char] ? "ASCII_#{_char.charCodeAt 0}"
   wrapper txt
 
 to_js_identifier = (text) ->
