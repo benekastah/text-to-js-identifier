@@ -2,7 +2,7 @@
     "name": "text-to-js-identifier"
   , "description": "Turn arbitrary text to a valid javascript identifier"
   , "keywords": ["parser", "compiler"]
-  , "version": "0.0.2"
+  , "version": "0.0.3"
   , "author": "Paul Harper <benekastah@gmail.com>"
   , "repository": {
       "type": "git"
